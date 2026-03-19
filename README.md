@@ -1,6 +1,6 @@
 # `tello_ros2_humble_driver`
 
-The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you can use the readme file to understand the basics of the tello ros driver.
+The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you can use the readme file to understand the basics of the tello ros driver, like the topics etc. 
 
 
 
@@ -78,6 +78,8 @@ If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 
 ### Tello simulation in [Gazebo](http://gazebosim.org/)
 
+
+you can go to /tello_ros/tello_gazebo to check more details.
 `tello_gazebo` consists of several components:
 * `TelloPlugin` simulates a drone, handling takeoff, landing, and basic flight dynamics
 * `markers` contains Gazebo models for fiducial markers
@@ -86,7 +88,6 @@ If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 * the built-in camera plugin is used to emulate the Gazebo forward-facing camera
 
 -----
-
 
 
 ## Instructions for using Docker
