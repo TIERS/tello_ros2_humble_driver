@@ -65,19 +65,18 @@ This is sufficient to just control the real drone. No matter you want to teleopr
     
 You will see a single drone in a blank world. You can control the drone using the joystick.
 
----
+### Control the drone
+    ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
+    ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'land'}"
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
+
+-----
 If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 
     export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
     source /usr/share/gazebo/setup.sh
     
 
-### Control the drone
-    ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
-    ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'land'}"
-    ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
-
----
 
 ### Tello simulation in [Gazebo](http://gazebosim.org/)
 
@@ -88,7 +87,7 @@ If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 * `inject_entity.py` is a script to spawn a model (URDF or SDF) in a running Gazebo instance
 * the built-in camera plugin is used to emulate the Gazebo forward-facing camera
 
----
+-----
 
 
 
