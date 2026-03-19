@@ -1,9 +1,9 @@
 # `tello_ros2_humble_driver`
 
-The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you can use the readme file to understand the basics of the tello ros driver, like the topics etc. 
 
+The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you should use the readme file to understand the core concepts of this tello ros driver, like the topics, services, etc. 
 
-
+For the installation of this driver on ros2 humble, you should follow the instuctions below.
 
 ## Installation
 
@@ -64,6 +64,9 @@ This is sufficient to just control the real drone. No matter you want to teleopr
 You will see a single drone in a blank world. You can control the drone using the joystick.
 
 ### Control the drone
+
+example:
+
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'land'}"
     ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
@@ -73,7 +76,6 @@ If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 
     export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
     source /usr/share/gazebo/setup.sh
-    
 
 
 ### Tello simulation in [Gazebo](http://gazebosim.org/)
@@ -88,7 +90,6 @@ you can go to /tello_ros/tello_gazebo to check more details.
 * the built-in camera plugin is used to emulate the Gazebo forward-facing camera
 
 -----
-
 
 ## Instructions for using Docker
 There is also an image prepared for this repo to streamline the process. This image also includes the [Tentone Tello-ROS2 repository](https://github.com/tentone/tello-ros2)
