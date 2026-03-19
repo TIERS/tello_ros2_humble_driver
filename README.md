@@ -7,14 +7,14 @@ The main tello ros driver is located in the tello_ros package. You can find the 
 
 ## Installation
 
-### 1️⃣ Install ROS 2 Humble
+### Install ROS 2 Humble
 Follow the instructions at:
 [https://docs.ros.org/en/humble/Installation.html](https://docs.ros.org/en/humble/Installation.html)  
 Use the `ros-humble-desktop` option for full desktop tools.
 
 ---
 
-### 2️⃣ Install dependencies
+### Install dependencies
 first install gazebo for ros humble
     
     source /opt/ros/humble/setup.bash 
@@ -32,7 +32,7 @@ after that
     libignition-rendering6 
 
 
-#### Build this package
+### Build this package
 
     mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws/src
@@ -42,18 +42,9 @@ after that
     cd ~/ros2_ws
     source /opt/ros/humble/setup.bash
     colcon build
-    
-### 3️⃣ Run a teleop simulation
 
-    cd ~/ros2_ws
-    source install/setup.bash
-    export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
-    source /usr/share/gazebo/setup.sh
-    ros2 launch tello_gazebo simple_launch.py
-    
-You will see a single drone in a blank world. You can control the drone using the joystick.
 
-### 3️⃣ Just run the driver to control the real drone
+### Just run the driver to control the real drone
 
     cd ~/ros2_ws
     source install/setup.bash
@@ -64,20 +55,31 @@ You will see a single drone in a blank world. You can control the drone using th
 This is sufficient to just control the real drone. No matter you want to teleoprate with gamepad or keyboard, or you want to use the python codes to control the drone.
 
 
+### Run a simulation
+
+    cd ~/ros2_ws
+    source install/setup.bash
+    export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
+    source /usr/share/gazebo/setup.sh
+    ros2 launch tello_gazebo simple_launch.py
+    
+You will see a single drone in a blank world. You can control the drone using the joystick.
+
+---
 If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 
     export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
     source /usr/share/gazebo/setup.sh
     
 
-#### Control the drone
+### Control the drone
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'land'}"
     ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
 
 ---
 
-## Tello simulation in [Gazebo](http://gazebosim.org/)
+### Tello simulation in [Gazebo](http://gazebosim.org/)
 
 `tello_gazebo` consists of several components:
 * `TelloPlugin` simulates a drone, handling takeoff, landing, and basic flight dynamics
