@@ -118,7 +118,20 @@ source /opt/ros/eloquent/setup.bash
 colcon build --event-handlers console_direct+ --packages-skip tello_gazebo
 ~~~
 
-## Teleop
+
+## Usage
+
+## IMPORTANT:！！！
+
+- **To control one real drone:**  
+  **Focus on the `teleop_launch.py` file in the `tello_driver` package. This is sufficient. No matter you want to teleoprate with gamepad or keyboard, or you want to use the python codes to control the drone, you should foucs on this launch file.**
+- **To control one drone in simulation:**  
+  **Check the `emulator_launch.py` file in the `tello_driver` package and the launch files in the `tello_gazebo` package.**
+- **To control multiple drones in simulation:**  
+  **Check the `emulators_launch.py` file in the `tello_driver` package and the launch files in the `tello_gazebo` package.**
+
+
+## teleop_launch.py：
 
 The driver provides a simple launch file that will allow you to fly the drone using a wired XBox One gamepad.
 
