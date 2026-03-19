@@ -48,8 +48,6 @@ after that
 
     cd ~/ros2_ws
     source install/setup.bash
-    export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
-    source /usr/share/gazebo/setup.sh
     ros2 launch tello_driver teleop_launch.py
 
 This is sufficient to just control the real drone. No matter you want to teleoprate with gamepad or keyboard, or you want to use the python codes to control the drone.
