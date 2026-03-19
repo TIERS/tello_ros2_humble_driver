@@ -3,16 +3,7 @@
 The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you can use the readme file to understand the basics of the tello ros driver.
 
 
-## Running a Tello simulation in [Gazebo](http://gazebosim.org/)
 
-`tello_gazebo` consists of several components:
-* `TelloPlugin` simulates a drone, handling takeoff, landing, and basic flight dynamics
-* `markers` contains Gazebo models for fiducial markers
-* `fiducial.world` is a simple world with multiple fiducial markers
-* `inject_entity.py` is a script to spawn a model (URDF or SDF) in a running Gazebo instance
-* the built-in camera plugin is used to emulate the Gazebo forward-facing camera
-
----
 
 ## Installation
 
@@ -83,6 +74,22 @@ If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'land'}"
     ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r __ns:=/drone1
+
+---
+
+## Tello simulation in [Gazebo](http://gazebosim.org/)
+
+`tello_gazebo` consists of several components:
+* `TelloPlugin` simulates a drone, handling takeoff, landing, and basic flight dynamics
+* `markers` contains Gazebo models for fiducial markers
+* `fiducial.world` is a simple world with multiple fiducial markers
+* `inject_entity.py` is a script to spawn a model (URDF or SDF) in a running Gazebo instance
+* the built-in camera plugin is used to emulate the Gazebo forward-facing camera
+
+---
+
+
+
 ## Instructions for using Docker
 There is also an image prepared for this repo to streamline the process. This image also includes the [Tentone Tello-ROS2 repository](https://github.com/tentone/tello-ros2)
  for working with a real Tello.
