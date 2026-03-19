@@ -1,4 +1,7 @@
-# `drone_racing_ros2`
+# `tello_ros2_humble_driver`
+
+The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you can use the readme file to understand the basics of the tello ros driver.
+
 
 ## Running a Tello simulation in [Gazebo](http://gazebosim.org/)
 
@@ -37,15 +40,10 @@ after that
     ros-humble-gazebo-ros* \
     libignition-rendering6 
 
-Make a folder as a workspace, inside that folder, make a virtual environment:
-
-    mkdir -p ~/ros2_ws/src
-    cd ~/ros2_ws
-    python -m venv venv
-    source venv/bin/activate
 
 #### Build this package
-    
+
+    mkdir -p ~/ros2_ws/src
     cd ~/ros2_ws/src
     git clone https://github.com/TIERS/tello_ros2_humble_driver.git
     cd tello_ros2_humble_driver/
@@ -62,8 +60,18 @@ Make a folder as a workspace, inside that folder, make a virtual environment:
     source /usr/share/gazebo/setup.sh
     ros2 launch tello_gazebo simple_launch.py
     
-You will see a single drone in a blank world.
-You can control the drone using the joystick.
+You will see a single drone in a blank world. You can control the drone using the joystick.
+
+### 3️⃣ Just run the driver to control the real drone
+
+    cd ~/ros2_ws
+    source install/setup.bash
+    export GAZEBO_MODEL_PATH=${PWD}/install/tello_gazebo/share/tello_gazebo/models
+    source /usr/share/gazebo/setup.sh
+    ros2 launch tello_driver teleop_launch.py
+
+This is sufficient to just control the real drone. No matter you want to teleoprate with gamepad or keyboard, or you want to use the python codes to control the drone.
+
 
 If you run into the **No namespace found** error re-set `GAZEBO_MODEL_PATH`:
 
