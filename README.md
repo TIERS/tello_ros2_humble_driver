@@ -47,8 +47,8 @@ Make a folder as a workspace, inside that folder, make a virtual environment:
 #### Build this package
     
     cd ~/ros2_ws/src
-    git clone git@github.com:DanMS98/drone_racing_ros2.git
-    cd drone_racing_ros2/
+    git clone https://github.com/TIERS/tello_ros2_humble_driver.git
+    cd tello_ros2_humble_driver/
     pip install -r requirements.txt
     cd ~/ros2_ws
     source /opt/ros/humble/setup.bash
