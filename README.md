@@ -65,6 +65,9 @@ You will see a single drone in a blank world. You can control the drone using th
 
 ### Control the drone
 
+Notice！For real tello and simulation, the name of the topic and service might be different, you better manually check by ros2 topic or service list.
+
+
 example:
 
     ros2 service call /drone1/tello_action tello_msgs/TelloAction "{cmd: 'takeoff'}"
