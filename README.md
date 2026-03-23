@@ -3,7 +3,7 @@
 
 The main tello ros driver is located in the tello_ros package. You can find the README file in the tello_ros package. Notice that the readme file in the tello_ros package is not up to date, it indicates that it's using ROS2 Eloquent, but we are using ROS2 Humble. But still, you should use the readme file to understand the core concepts of this tello ros driver, like the topics, services, etc. 
 
-For the installation of this driver on ros2 humble, you should follow the instuctions below.
+For the installation of this driver on ros2 humble, you should follow the instructions below.
 
 ## Installation
 
