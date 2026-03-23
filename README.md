@@ -65,7 +65,7 @@ You will see a single drone in a blank world. You can control the drone using th
 
 ### Control the drone
 
-Notice！For real tello and simulation, the name of the topic and service might be different, you better manually check by ros2 topic or service list.
+Notice！For real tello and simulation, the name of the topic and service might be different, you better manually check by ros2 topic or service list. In simulation, it has some prefix like:/drone1.
 
 
 example:
